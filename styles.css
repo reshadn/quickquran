@@ -1,0 +1,117 @@
+/*
+ * Custom CSS for QuickQuran.com Chrome Extension
+ * by Reshad Noorzay 
+ */
+
+/* GLOBAL */
+body {
+margin: 0px;
+background-color:#EBEBEB;
+background-image: url(/headerBG.png);
+background-repeat: repeat-x;
+min-width:470px;
+overflow-x:hidden;
+}
+		
+/* TOOLBAR */
+#toolbar {
+z-index: 1;
+position: absolute;
+height: 18px;
+font-size: 12px;
+font-family: Arial;
+padding-top: 3px;
+width: 100%;
+line-height: normal;
+}
+#toolbarLeft {
+float: left;
+margin-left: 10px;
+margin-top: 1px;
+	/* http://creatr.cc/creatr Logo Creator:
+	[col=3399cc]Quick[/col][col=ACBA5A]Quran[/col]*/
+}
+#toolbarRight {
+color: #fff;
+float: right;
+padding-right: 5px;
+width: 240px;
+}
+#toolbarRight a {
+color: #E1EDA9;
+text-decoration: none;
+padding:0 3px;
+display:inline;		
+}
+#toolbarRight a:hover {
+color:#3399FF;
+text-decoration: underline;
+}
+
+/* RECITER LIST */
+#accordion {
+padding: 30px 1px 5px 1px;
+}
+
+#selectInstructions {
+font-size: 10px;
+}
+
+/* SURAH UNORDERED LIST */
+.surahIndex {
+padding: 1px;
+float: left;
+font-size: 14px;
+font-family: "trebuchet ms", Arial, Helvetica, sans-serif;
+}
+.surahIndex a {
+text-decoration: none;
+color: #666;
+
+}
+.surahIndex a:hover {
+text-decoration: underline;
+color:#0099FF;
+}
+.surahIndex ul {
+list-style-type:none;
+margin:0;
+padding:0;
+}
+.surahIndex li {
+float:left;
+display: block;
+width:140px;
+height: 22px;
+}
+
+.surahTextLink {
+display: inline;
+}
+.surahTextLink a{
+margin: 0px 0px 0px 3px;
+width: 20px;
+font-size: 9px;
+}
+
+/* FOOTER */
+#footer {
+color: #999;
+font-size: 10px;
+float: right;
+background-color: #CCCCCC;
+width: 100%;
+}
+#footerContent {
+float: right;
+width: 100%;
+text-align: right;
+padding: 5px 22px 5px 0px;
+
+}
+#footer a {
+color: #999;
+}
+#footer a:hover {
+color: #666;
+}
