@@ -1,0 +1,23 @@
+{
+  "name": "QuickQuran",
+  "version": "0.5.4",
+  "homepage": "https://github.com/reshadn/QuickQuranExt",
+  "authors": [
+    "Reshad Noorzay <rnoorzay@gmail.com>"
+  ],
+  "description": "Quick reference to read, listen and research the Quran.",
+  "main": "popup.html",
+  "keywords": [
+    "quran",
+    "islam"
+  ],
+  "license": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
