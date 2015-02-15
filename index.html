@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="qq">
+
+<head>
+  <meta charset="utf-8">
+  <title>QuickQuran</title>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+
+</head>
+
+<body>
+  <div ng-controller="quickQuranCtrl" style="width:330px;">
+    <div>
+      <img src="images/title.png">&nbsp;&nbsp;
+      <a target="_blank" href="http://tafsir.com">Tafsir</a> &nbsp;|&nbsp;
+      <a target="_blank" href="http://salah.com">Salah</a>
+    </div>
+    <div>
+      <p>
+        <em>"The Most Merciful, (It is He Who has) taught the Qur'an."</em>(Qur'an 55:1-2)</p>
+      <div>
+        <select ng-model="context.selectedReciter" ng-options="r.name for r in reciters" ng-change="getAudioURL()">
+          <!-- reciters list-->
+        </select>
+        <select ng-model="context.selectedSurah" ng-options="s for s in surahs" ng-change="getAudioURL()">
+          <!-- surahs list-->
+        </select>
+      </div>
+      <div>
+
+        <div>
+          <audio controls name="media" ng-src={{audioSrc}} type="audio/mpeg">
+          </audio>
+        </div>
+
+        <a target='_blank' ng-href="http://quran.com/{{surahIndex}}">
+          <img src="images/book_open_28.png">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

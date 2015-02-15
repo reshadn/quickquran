@@ -1,15 +1,16 @@
 {
   "name": "QuickQuran",
-  "version": "0.5.4",
+  "version": "0.1.0",
   "homepage": "https://github.com/reshadn/QuickQuranExt",
   "authors": [
     "Reshad Noorzay <rnoorzay@gmail.com>"
   ],
-  "description": "Quick reference to read, listen and research the Quran.",
-  "main": "popup.html",
+  "description": "Quick links to audio recitations from quranicaudio.com",
+  "main": "index.html",
   "keywords": [
     "quran",
-    "islam"
+    "islam",
+    "recitation"
   ],
   "license": "none",
   "private": true,
@@ -19,5 +20,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "1.3.4",
+    "angular-material": "~0.7.1"
+  },
+  "resolutions": {
+    "angular": "1.3.x"
+  }
 }
