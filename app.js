@@ -1,5 +1,6 @@
-angular.module('qq', []).controller('quickQuranCtrl', ['$scope', '$sce',
-	function($scope, $sce) {
+angular.module('qq', ['ngMaterial']).controller('quickQuranController', [
+	'$scope', '$sce', '$mdToast',
+	function($scope, $sce, $mdToast) {
 		'use strict';
 		var getSurahIndex;
 
@@ -60,21 +61,35 @@ angular.module('qq', []).controller('quickQuranCtrl', ['$scope', '$sce',
 				surahIndex <= 99) ? "0" + surahIndex : surahIndex;
 		};
 
-		$scope.getAudioURL = function() {
-			var audioUrl = "http://download.quranicaudio.com/quran/" + $scope.context
-				.selectedReciter
-				.link + "/" + getSurahIndex($scope.context.selectedSurah) + ".mp3";
-
-			// used when interpolating for src in audio tag
-			$scope.audioSrc = $sce.trustAsResourceUrl(audioUrl);
-		};
-
 		$scope.context = {
 			selectedReciter: $scope.reciters[0],
 			selectedSurah: $scope.surahs[0],
 			isPlaying: false
 		};
 
-		$scope.pause = function() {}; // $scope.isPlaying=c ontext.isPlaying || false; // $scope.isPaused=c ontext.isPaused || false; //initiate audioURL $scope.getAudioURL();
+		$scope.updateSurah = function() {
+			var audioUrl, surahUrl;
+
+			audioUrl = "http://download.quranicaudio.com/quran/" + $scope.context
+				.selectedReciter
+				.link + "/" + getSurahIndex($scope.context.selectedSurah) + ".mp3";
+
+			surahUrl = "http://quran.com/" + getSurahIndex($scope.context.selectedSurah);
+
+			// used when interpolating for src in audio or iframe tags
+			$scope.audioSrc = $sce.trustAsResourceUrl(audioUrl);
+			$scope.surahSrc = $sce.trustAsResourceUrl(surahUrl);
+
+			$mdToast.show(
+				$mdToast.simple()
+				.content('Selected reciter: ' + $scope.context.selectedReciter.name +
+					' & Surah: ' + $scope.context.selectedSurah)
+				.position('bottom left')
+				.hideDelay(3000)
+			);
+		};
+
+		$scope.updateSurah();
+
 	}
 ]);

@@ -8,39 +8,50 @@
 
 </head>
 
-<body>
-  <div ng-controller="quickQuranCtrl" style="width:330px;">
-    <div>
-      <img src="images/title.png">&nbsp;&nbsp;
-      <a target="_blank" href="http://tafsir.com">Tafsir</a> &nbsp;|&nbsp;
-      <a target="_blank" href="http://salah.com">Salah</a>
-    </div>
-    <div>
+<body ng-controller="quickQuranController">
+  <div layout="column" layout-sm="column" layout-align="center">
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span class="md-flex">
+          <img src="images/title.png">
+        </span>
+        <span>
+        <a target="_blank" href="http://tafsir.com">Tafsir</a>
+        <a target="_blank" href="http://salah.com">Salah</a>
+      </span>
+      </div>
+    </md-toolbar>
+
+    <div layout="column" layout-margin layout-fill layout-padding>
       <p>
         <em>"The Most Merciful, (It is He Who has) taught the Qur'an."</em>(Qur'an 55:1-2)</p>
       <div>
-        <select ng-model="context.selectedReciter" ng-options="r.name for r in reciters" ng-change="getAudioURL()">
+        <select ng-model="context.selectedReciter" ng-options="r.name for r in reciters" ng-change="updateSurah()">
           <!-- reciters list-->
         </select>
-        <select ng-model="context.selectedSurah" ng-options="s for s in surahs" ng-change="getAudioURL()">
+        <select ng-model="context.selectedSurah" ng-options="s for s in surahs" ng-change="updateSurah()">
           <!-- surahs list-->
         </select>
       </div>
-      <div>
 
+      <div>
         <div>
           <audio controls name="media" ng-src={{audioSrc}} type="audio/mpeg">
           </audio>
+          <a target='_blank' ng-href="http://quran.com/{{surahIndex}}"><img src="images/book_open_28.png"></a>
         </div>
-
-        <a target='_blank' ng-href="http://quran.com/{{surahIndex}}">
-          <img src="images/book_open_28.png">
-        </a>
       </div>
+
     </div>
+
   </div>
 
+  <!-- Angular Material Dependencies -->
   <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
 
   <script src="app.js"></script>
 </body>
