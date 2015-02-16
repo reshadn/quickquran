@@ -89,14 +89,15 @@ angular.module('qq', ['ngMaterial']).controller('quickQuranController', [
 			);
 		};
 
+// initialize autoplay text
 		$scope.isAutoplay = 'OFF';
 
-		$scope.toggleAutoplay = function(){
-		//	$scope.isAutoplay = !$scope.isAutoplay;
-
-			console.log('autoplay' + $scope.isAutoplay);
-
-		}
+// 		$scope.toggleAutoplay = function(){
+// 		//	$scope.isAutoplay = !$scope.isAutoplay;
+// // use http://www.ng-newsletter.com/posts/beginner2expert-services.html to build autoplay functionality, service handles listeners and trigger next surah after "ended" event is emitted.
+// 			console.log('autoplay' + $scope.isAutoplay);
+//
+// 		}
 
 		$scope.updateSurah();
 
