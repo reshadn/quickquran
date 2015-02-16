@@ -89,6 +89,15 @@ angular.module('qq', ['ngMaterial']).controller('quickQuranController', [
 			);
 		};
 
+		$scope.isAutoplay = 'OFF';
+
+		$scope.toggleAutoplay = function(){
+		//	$scope.isAutoplay = !$scope.isAutoplay;
+
+			console.log('autoplay' + $scope.isAutoplay);
+
+		}
+
 		$scope.updateSurah();
 
 	}

@@ -5,55 +5,58 @@
   <meta charset="utf-8">
   <title>QuickQuran</title>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body ng-controller="quickQuranController">
-  <div layout="column" layout-sm="column" layout-align="center">
+  <div layout="column" layout-sm="column">
 
     <md-toolbar>
-      <div class="md-toolbar-tools">
-        <span class="md-flex">
+      <div class="md-toolbar-tools" layout="row" layout-wrap>
+        <div flex="20">
           <img src="images/title.png">
-        </span>
-        <span>
-        <a target="_blank" href="http://tafsir.com">Tafsir</a>
-        <a target="_blank" href="http://salah.com">Salah</a>
-      </span>
+        </div>
       </div>
     </md-toolbar>
 
-    <div layout="column" layout-margin layout-fill layout-padding>
+    <div layout="column" layout-margin layout-fill layout-padding layout-align="space-around center">
       <p>
-        <em>"The Most Merciful, (It is He Who has) taught the Qur'an."</em>(Qur'an 55:1-2)</p>
-      <div>
-        <select ng-model="context.selectedReciter" ng-options="r.name for r in reciters" ng-change="updateSurah()">
-          <!-- reciters list-->
-        </select>
-        <select ng-model="context.selectedSurah" ng-options="s for s in surahs" ng-change="updateSurah()">
-          <!-- surahs list-->
-        </select>
-      </div>
+        <em>"The Most Merciful, (It is He Who has) taught the Qur'an."</em>
+        (Qur'an 55:1-2)
+      </p>
+      <div layout-margin layout-fill layout-padding>
+        <div layout-margin layout-fill layout-padding>
+          <select ng-model="context.selectedReciter" ng-options="r.name for r in reciters" ng-change="updateSurah()">
+            <!-- reciters list-->
+          </select>
+          <select ng-model="context.selectedSurah" ng-options="s for s in surahs" ng-change="updateSurah()">
+            <!-- surahs list-->
+          </select>
+        </div>
 
-      <div>
-        <div>
+        <div layout-margin layout-fill layout-padding>
           <audio controls name="media" ng-src={{audioSrc}} type="audio/mpeg">
           </audio>
-          <a target='_blank' ng-href="http://quran.com/{{surahIndex}}"><img src="images/book_open_28.png"></a>
+          <a target='_blank' ng-href="http://quran.com/{{surahIndex}}">
+            <img src="images/book_open_28.png">
+          </a>
         </div>
+        <!-- <div class="inset">
+          <md-switch class="md-primary" ng-model="isAutoplay" ng-true-value="'ON'" ng-false-value="'OFF'" ng-change="toggleAutoplay()">Autoplay {{isAutoplay}}
+          </md-switch>
+        </div> -->
       </div>
 
     </div>
 
-  </div>
+    <!-- Angular Material Dependencies -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
 
-  <!-- Angular Material Dependencies -->
-  <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-animate/angular-animate.min.js"></script>
-<script src="bower_components/angular-aria/angular-aria.min.js"></script>
-<script src="bower_components/angular-material/angular-material.min.js"></script>
-
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
